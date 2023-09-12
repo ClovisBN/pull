@@ -1,0 +1,83 @@
+<main>
+
+<div class="fromulaireContainer">
+    
+<div class="contForm">
+    <div class="formFooter">
+        <div class="mapContnaire">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.96798408557!2d2.264463274027816!3d48.85882536993727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1693383138236!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="textCenter">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, dicta!</p>
+        </div>
+    </div>
+    <div class="contactInformation">
+        <div class="divText">
+            <div class="icon"></div>
+            <h2>lorem</h2>
+            <span>Lorem ipsum dolor sit amet.</span>
+        </div>
+        <div class="divText">
+            <div class="icon"></div>
+            <h2>lorem</h2>
+            <span>Lorem ipsum dolor sit amet.</span>
+        </div>
+        <div class="divText">
+            <div class="icon"></div>
+            <h2>lorem</h2>
+            <span>Lorem ipsum dolor sit amet.</span>
+        </div>
+    </div>
+    
+    <form id="form" method="post">
+        <?php if (isset($data)) {
+                    foreach ($data as $value) {
+                        echo $value;
+                    }
+                } ?>
+        <div class="inputGroup">
+            <input type="email" id="mail" class="input" name="mail" placeholder="your email..." required>
+        </div>
+        <div class="inputGroup">
+            <input type="text" id="object" class="input" name="object" placeholder="object..." required>
+        </div>
+        <div class="inputGroup">
+            <textarea id="text" class="input" name="text" rows="5" cols="33">text ...</textarea>
+        </div>
+        <div class="inputSubmit" id="submit">
+            <input type="submit" class="inputBtn" value="Envoyer">
+        </div>
+    </form>
+</div>
+</main>
+
+<script>
+    
+    const form = document.getElementById("form");
+    let submit = document.getElementById("submit");
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        submit.classList.add("submitBtnConfrim");
+        
+        const payload = new FormData(form);
+        console.log([...payload]);
+        
+        fetch("https://clovisbonnemaison.sites.3wa.io/pull/public/index.php?page=contact", {
+            method: "POST",
+            body: payload,
+        })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .then((res) =>{ 
+            
+            submit.classList.remove("submitBtnConfrim");
+        
+        })
+    })
+    
+</script>
+
+

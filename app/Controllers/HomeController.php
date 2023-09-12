@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Controllers\MainController;
+use App\Models\PostModel;
+
+class HomeController extends MainController
+{
+
+    public function renderHome(): void
+    {
+        $postModel = new PostModel();
+        $this->data = $postModel->getPosts(10);
+        $this->render();
+    }
+}

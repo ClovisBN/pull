@@ -1,0 +1,28 @@
+<div class="navSex">
+    <div class="sex">
+        Man
+    </div>
+    <div class="sex">
+        Woman
+    </div>
+</div>
+
+<main>
+    <ul class="productsContainer">
+        <?php foreach($this->data as $products): ?>
+        <li  class="cardProduct">
+            <div>
+            <article>
+                <a href="products/<?= $products->getId(); ?>">
+                    <img src="./../public/assets/front/img/moutonPrairi.jpg" alt="img article pull">
+                </a>
+                <h2 class="mrg1">
+                    <a href="products/<?= $products->getId(); ?>"><?= $products->getName(); ?></a>
+                </h2>
+                <p><?= $products->getPrice(); ?>€</p>
+            </article>
+            </div>
+        </li>
+        <?php endforeach; ?> 
+    </ul>
+</main>

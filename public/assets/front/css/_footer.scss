@@ -1,0 +1,107 @@
+footer {
+    margin-top: 40px;
+    border-top: .0625rem solid #fafbfe;
+}
+
+.footerLinksPc {
+    display: none;
+}
+
+.footerCont {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.footerCont li {
+    list-style: none;
+}
+
+.footerInfo {
+    font-size: 0.7rem;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+.spacingFooter {
+    height: 50px;
+}
+
+.footerLinksMobile {
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+    border-radius: .55rem;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+
+.accordion {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    word-wrap: break-word;
+    background-color: #e6e7ee;
+    background-clip: border-box;
+    border: .0625rem solid rgba(243, 247, 250, .05);
+    border-radius: .55rem;
+    padding: 1.5rem;
+    font-size: 1rem;
+}
+
+.accordion:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+    transition: all 0.2s ease;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active {
+    transform: rotateZ(0deg);
+    transition: all 0.2s ease;
+}
+
+.active:after {
+    transform: rotateZ(45deg);
+    transition: all 0.2s ease;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+
+.panel {
+    padding: 0 18px;
+    background-color: #e6e7ee;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+
+    font-size: .8rem;
+    font-weight: 300;
+    line-height: 1.6;
+    border-radius: .55rem;
+}
+
+
+@media screen and (min-width: 900px) {
+
+    .footerLinksMobile {
+        display: none;
+    }
+
+    .footerLinksPc {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .footerLinksPc .footerTitle {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,14 @@
+<main>
+    <article class="postArticle">
+        <div class="titleHeader">
+            <h1><?= $data->getTitle(); ?></h1>
+            <h2><?= $data->getSubtitle(); ?></h2>
+        </div>
+        <div class="contentMain">
+            <img src="<?= $base_uri[0]; ?>/public/assets/front/img/<?= $data->getImg(); ?>"></img>
+            
+            <p><?= $data->getContent(); ?></p>
+            <p class="datePost"><?= $data->getDate(); ?></p>
+        </div>
+    </article>
+    </main>
