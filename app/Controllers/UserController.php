@@ -9,7 +9,7 @@ class UserController extends MainController {
     {
         if ($this->view === 'logout') {
             $this->logout();
-        } else {            
+        } else {      
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 if (isset($_POST["registerForm"])) {
                     $this->register();
@@ -35,7 +35,7 @@ class UserController extends MainController {
 
         if (!$email || !$password || !$name) {
             $errors = 1;
-            $this->data[] = '<div class="alert alert-danger" role="alert">Tous les champs sont obligatoires</div>';
+            $this->data[] = '<div class="" role="alert">Tous les champs sont obligatoires</div>';
         }
 
         $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
@@ -80,7 +80,6 @@ class UserController extends MainController {
         $user = new UserModel();
         // on récupère l'utilisateur via son email
         $user = $user->getUserByEmail($_POST['email']);
-
         // si user renvoie false
         if (is_null($user)) {
             // il y a eu une erreur

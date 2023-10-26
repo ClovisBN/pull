@@ -1,0 +1,156 @@
+.login {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.p-4 {
+    padding: 1.5rem;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10vh;
+}
+
+.logCard {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+.labelInput {
+    font-size: .7rem;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.loginTitle {
+    text-align: center;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0;
+    h4 {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+}
+
+.formBody {
+    flex: 1 1 auto;
+    padding: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.inputGroup {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+    border-radius: .55rem;
+    margin-bottom: 1.5rem!important;
+    transition: all .2s ease;
+}
+
+.inputGroupPrepend {
+    margin-right: -.0625rem;
+    display: flex;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 1.2rem + .0625rem);
+    padding: .6rem .75rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #44476a;
+    background-color: #e6e7ee;
+    background-clip: padding-box;
+    border: .0625rem solid #d1d9e6;
+    border-radius: .55rem;
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+    transition: all .3s ease-in-out;
+
+
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+
+.form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+}
+
+
+.inputGroupText {
+    display: flex;
+    align-items: center;
+    padding: .6rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #44476a;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e6e7ee;
+    border: .0625rem solid #d1d9e6;
+    border-radius: .55rem;
+}
+
+.inputGroupText {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.inputSubmitLogin {
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: .55rem;
+    position: relative;
+    border-color: #d1d9e6;
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;
+    display: block;
+    width: 100%;
+}
+
+.inputSubmitLogin input {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    letter-spacing: .025em;
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+    padding: 0.55rem 0.55rem;
+}
+
+@media (min-width: 768px) {
+    .logCont {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 576px) {
+    .logCont {
+        max-width: 540px;
+    }
+
+    .container {
+        max-width: 540px;
+    }
+}

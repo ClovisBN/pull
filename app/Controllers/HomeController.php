@@ -11,7 +11,7 @@ class HomeController extends MainController
     public function renderHome(): void
     {
         $postModel = new PostModel();
-        $this->data = $postModel->getPosts(10);
+        $this->data = $postModel->getPosts();
         $this->render();
     }
 }

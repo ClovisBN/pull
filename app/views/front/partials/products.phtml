@@ -10,19 +10,21 @@
 <main>
     <ul class="productsContainer">
         <?php foreach($this->data as $products): ?>
-        <li  class="cardProduct">
-            <div>
-            <article>
-                <a href="products/<?= $products->getId(); ?>">
-                    <img src="./../public/assets/front/img/moutonPrairi.jpg" alt="img article pull">
-                </a>
-                <h2 class="mrg1">
-                    <a href="products/<?= $products->getId(); ?>"><?= $products->getName(); ?></a>
-                </h2>
-                <p><?= $products->getPrice(); ?>€</p>
-            </article>
-            </div>
-        </li>
+        <a href="product/<?= $products->getId(); ?>">
+            <li  class="cardProduct">
+                <div>
+                <article>
+                    <a href="product/<?= $products->getId(); ?>">
+                        <img src="./../public/assets/front/img/moutonPrairi.jpg" alt="img article pull">
+                    </a>
+                    <h2 class="mrg1">
+                        <p><?= $products->getName(); ?></p>
+                    </h2>
+                    <p><?= $products->getPrice(); ?>€</p>
+                </article>
+                </div>
+            </li>
+            </a>
         <?php endforeach; ?> 
     </ul>
 </main>

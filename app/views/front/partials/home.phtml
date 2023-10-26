@@ -4,10 +4,12 @@
     if(isset($_SESSION['user_name'])){
         echo $_SESSION['user_name'];
     }
+    
     ?>
     <?php foreach($this->data as $post): ?>
+    
     <article class="card cardArticle">
-        <img src="./../public/assets/front/img/moutonPrairi.jpg" alt="img article pull">
+        <img src="<?= $base_uri[0]; ?>/public/assets/front/uploads/<?= $post->getImg(); ?>" alt="img article pull">
         <div class="date"><?= $post->getDate(); ?></div>
         <h2 class="mrg1"><?= $post->getTitle(); ?></h2>
         <p><?= $post->getSubtitle(); ?></p>

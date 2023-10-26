@@ -1,0 +1,249 @@
+@font-face {
+  font-family: "Nunito-Sans-regular";
+  src: url("../../Nunito_Sans/static/NunitoSans_7pt-Regular.ttf")
+}
+
+@font-face {
+  font-family: "Nunito-Sans-Bold";
+  src: url("../../Nunito_Sans/static/NunitoSans_7pt_Condensed-Black.ttf")
+}
+
+/*@font-face {
+  font-family: "Nunito-Sans-regular";
+  src: url("../Nunito_Sans/static/NunitoSans_7pt-Regular.ttf")
+}*/
+
+a {
+  text-decoration: none;
+}
+
+header {
+  z-index: 10000;
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+  background-color: #e6e7ee;
+  top: -100px;
+  transition: all 0.3s ease-in-out;
+}
+
+.downHeader {
+  top: 0;
+}
+
+.contHeader {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: 1136px;
+  display: block;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.navLink {
+  display: none;
+  flex-direction: row;
+}
+
+.navBtns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.logo {
+  font-family: "Nunito-Sans-regular";
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+#menu {
+  z-index: 1;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: -200vw;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+
+#menu ul {
+  margin-left: 25px;
+  margin-top: 80px;
+}
+
+#menu li {
+  list-style: none;
+}
+
+#menu li:hover {
+  text-decoration: underline;
+}
+
+#menu.overlay {
+  visibility: visible;
+  opacity: 1;
+  background-color: #fff;
+  left: 0;
+}
+
+/* Icon 3 */
+
+#nav-icon1,
+#nav-icon2,
+#nav-icon3,
+#nav-icon4 {
+  width: 20px;
+  height: 15px;
+  z-index: 100;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon1 span,
+#nav-icon3 span,
+#nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2),
+#nav-icon3 span:nth-child(3) {
+  top: 7.5px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 15px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.panier {
+  display: flex;
+}
+
+.btnPanier {
+  background-image: url("../img/panier.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+}
+
+.numberPanier {
+  position: relative;
+  font-size: .69rem;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  color: #fff;
+  border-radius: 10px;
+  z-index: 1;
+  top: -4px;
+  left: -10px;
+}
+
+.numberPanier div {
+  width: 100%;
+  color: #fff;
+  height: 100%;
+  text-align: center;
+
+}
+
+.navSex {
+  display: flex;
+  flex-direction: row;
+  max-width: 1136px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.sex {
+  width: 30%;
+  height: 50px;
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: .55rem;
+  padding: 1rem 1.5rem;
+  border: #44476a;
+  font-size: .875rem;
+  border: .0625rem solid #d1d9e6;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+  transition: all .25s ease;
+}
+
+.sex:hover {
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+}
+
+@media screen and (min-width: 900px) {
+
+  #nav-icon3 {
+    display: none;
+  }
+
+  .navLink {
+    display: flex;
+    margin-right: 20px;
+  }
+  .navLink div {
+    padding: 5px;
+    border-radius: 10px;
+    margin: 0 5px;
+  }
+}

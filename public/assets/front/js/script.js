@@ -45,15 +45,13 @@ btn.addEventListener('click', function() {
   })
 })*/
 
-// Initial state
 var scrollPos = 0;
-// adding scroll event
 window.addEventListener("scroll", function() {
-  // detects new state and compares it with the new one
-  if (document.body.getBoundingClientRect().top > scrollPos)
+  if (document.body.getBoundingClientRect().top > scrollPos) {
     document.getElementById("header").classList.add("downHeader");
-  else
+  }
+  else {
     document.getElementById("header").classList.remove("downHeader");
-  // saves the new position for iteration.
+  }
   scrollPos = document.body.getBoundingClientRect().top;
 });

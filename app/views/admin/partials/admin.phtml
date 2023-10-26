@@ -1,1 +1,39 @@
-admin
+<div class="mainPost">
+    
+    <div><a href="<?= $base_uri[0]; ?>/public/addPost">add post</a></div>
+    
+    <?php foreach($this->data['posts'] as $post): ?>
+    <div class="rowInfoPost">
+        <div class="itemInfoPost postInfo1"><?= $post->getid(); ?></div>
+        <div class="itemInfoPost postInfo2"><?= $post->getDate(); ?></div>
+        <div class="itemInfoPost postInfo3"><?= $post->getTitle(); ?></div>
+        <div>
+            <form method="post">
+                <a class="btnCrudpost" href="<?= $base_uri[0]; ?>/public/admin/updatePost/<?= $post->getId(); ?>">update</a>
+                <input type="hidden" name="postid" value="<?= $post->getId(); ?>"/>
+                <input class="btnCrudpost" type="submit" name="deletePostForm" value="delete"/> 
+            </form>
+        </div>
+    </div>
+    <?php endforeach; ?> 
+    
+    
+    
+    <div><a href="<?= $base_uri[0]; ?>/public/addProduct">add product</a></div>
+    
+    <?php foreach($this->data['pulls'] as $pulls): ?>
+    <div class="rowInfoPost">
+        <div class="itemInfoPost postInfo1"><?= $pulls->getid(); ?></div>
+        <div class="itemInfoPost postInfo2"><?= $pulls->getName(); ?></div>
+        <div class="itemInfoPost postInfo3"><?= $pulls->getPrice(); ?></div>
+        <div>
+            <form method="post">
+                <a class="btnCrudpost" href="<?= $base_uri[0]; ?>/public/admin/updateProduct/<?= $pulls->getId(); ?>">update</a>
+                <input type="hidden" name="pullid" value="<?= $pulls->getId(); ?>"/>
+                <input class="btnCrudpost" type="submit" name="deletePullForm" value="delete"/> 
+            </form>
+        </div>
+    </div>
+    <?php endforeach; ?> 
+</div>
+

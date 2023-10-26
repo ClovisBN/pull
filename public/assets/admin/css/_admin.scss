@@ -1,0 +1,39 @@
+.mainPost {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.rowInfoPost {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.rowInfoPost:nth-child(even) {
+    background-color: #D9D9D9;
+}
+
+.itemInfoPost {
+    padding: .5rem;
+}
+
+.postInfo1 {
+    width: 5%;
+    text-align: center;
+}
+
+.postInfo2 {
+    width: 25%;
+    text-align: justify;
+}
+
+.postInfo3 {
+    width: 60%;
+    text-align: justify;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

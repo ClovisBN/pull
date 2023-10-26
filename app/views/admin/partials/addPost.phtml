@@ -5,7 +5,7 @@
         <div class="container">
             <div class="card p-4 ">
                 <div class="loginTitle">
-                    <h4>Log in to our platform</h4>
+                    <h4>Update Post</h4>
                 </div>
                     
                     <div class="formBody">
@@ -41,9 +41,9 @@
                             </div>
                         </div>
                         
-                        <label for="file">Sélectionnez un fichier à télécharger :</label>
+                        <label class="labelInput" for="img">Sélectionnez une image à télécharger :</label>
                         <br>
-                        <input type="file" id="file" name="file">
+                        <input type="file" id="file" name="img">
                             
                         <div class="inputSubmitLogin">
                             <input type="submit" name="addPostForm" value="post"/>
@@ -54,69 +54,3 @@
         </div>
     </div>
 </main>
-
-
-<?php
-
-if ($_SERVER ["REQUEST METHOD"] == "POST") {
-    
-    $target_dir = "img/";
-    $file_name = uniqid() . "." . pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION);
-    $target_file = $target_dir . $file_name;
-    $uploadok = 1;
-    // Vérifiez si le fichier est une image
-    
-    if (isset($_POST ["submit"])) {
-        $check = getimagesize($_FILES ["file"] ["tmp_name"]);
-    
-        if ($check !== false) {
-            echo "Le fichier est une image -" . $check["mime"] . ".";
-            $uploadok = 1;
-        
-        } else {
-            echo "Le fichier n'est pas une image.";
-            $uploadok = 0;
-        }
-        
-        
-        
-        // Vérifiez si le fichier existe déià
-        if (file_exists($target_file)) {
-            echo "Désolé, le fichier existe déjà.";
-            $uploadok = 0;
-        }
-        
-        // Vérifiez la taille du fichier
-        if ($_FILES["file"]["size"] > 20000) {
-            echo "Désolé, le fichier est trop volumineux.";
-            $uploadok = 0;
-        }
-        
-        // Autorisez certaines extensions de fichier
-        $imageFileType = strtolower(pathinfo ($target_file, PATHINFO_EXTENSION));
-            
-        if (
-        $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-        && $imageFileType != "gif"
-        ) {
-            echo "Désolé, seuls les fichiers JPG, JPEG, PNG et GIF sont autorisés.";
-            $uploadok = 0;
-        }
-        
-        //1 vérifiez si suploadok est défini sur 0 par une erreur
-        if ($uploadok == 0) {
-        echo "Désolé, votre fichier n'a pas été téléchargé.";
-        
-        // Si tout est correct, téléchargez le fichier
-        } else {
-            if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-            echo "Le fichier " . $file_name ." a été téléchargé avec succès.";
-            
-            
-            
-            } else {
-            echo "Désolé, une erreur s'est produite lors du téléchargement de votre fichier.";
-            }
-        }
-    }
-}

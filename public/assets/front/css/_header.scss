@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Nunito-Sans-regular";
-  src: url("../Nunito_Sans/static/NunitoSans_7pt-Regular.ttf")
+  src: url("../../Nunito_Sans/static/NunitoSans_7pt-Regular.ttf")
 }
 
 @font-face {
   font-family: "Nunito-Sans-Bold";
-  src: url("../Nunito_Sans/static/NunitoSans_7pt_Condensed-Black.ttf")
+  src: url("../../Nunito_Sans/static/NunitoSans_7pt_Condensed-Black.ttf")
 }
 
 /*@font-face {
@@ -94,6 +94,7 @@ nav {
 
 #menu li {
   list-style: none;
+  padding: .25rem 0px;
 }
 
 #menu li:hover {

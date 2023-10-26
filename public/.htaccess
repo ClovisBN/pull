@@ -7,7 +7,16 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^/]+)/?$ index.php?page=$1 [QSA,L]
 
-# Réécrire l'URL pour les pages de posts
+# Réécrire l'URL pour les pages de post
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^post/(\d+)/?$ index.php?page=post&subpage=$1 [QSA,L]
+
+# Réécrire l'URL pour les pages de product
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^product/(\d+)/?$ index.php?page=product&subpage=$1 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^admin/([^/]+)/(\d+)/?$ index.php?page=admin&subpage=$1&id=$2 [QSA,L]

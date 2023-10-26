@@ -1,7 +1,9 @@
 <?php
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
+
 $base_uri = $_SERVER['REQUEST_URI'];
+require __DIR__ . "/../app/Utility/Constant/constant.php";
 session_start();
 
 const AVAIABLE_ROUTES = [
@@ -17,9 +19,17 @@ const AVAIABLE_ROUTES = [
         'action' => 'renderContact',
         'controller' => 'ContactController'
     ],
+    'profile'=>[
+        'action' => 'renderProfile',
+        'controller' => 'ProfileController'
+    ],
     'post'=>[
         'action' => 'renderPost',
         'controller' => 'PostController'
+    ],
+    'product'=>[
+        'action' => 'renderProduct',
+        'controller' => 'ProductController'
     ],
     'login'=>[
         'action' => 'renderUser',
@@ -33,11 +43,11 @@ const AVAIABLE_ROUTES = [
         'action' => 'renderAdmin',
         'controller' => 'AdminController'
     ],
-    'add'=>[
+    'addPost'=>[
         'action' => 'renderAdmin',
         'controller' => 'AdminController'
     ],
-    'update'=>[
+    'addProduct'=>[
         'action' => 'renderAdmin',
         'controller' => 'AdminController'
     ],
