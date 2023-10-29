@@ -1,11 +1,3 @@
-<div class="navSex">
-    <div class="sex">
-        Man
-    </div>
-    <div class="sex">
-        Woman
-    </div>
-</div>
 
 <main>
     <ul class="productsContainer">
@@ -15,12 +7,15 @@
                 <div>
                 <article>
                     <a href="product/<?= $products->getId(); ?>">
-                        <img src="./../public/assets/front/img/moutonPrairi.jpg" alt="img article pull">
+                        <img src="<?= $base_uri[0]; ?>/public/assets/front/uploads/<?= $products->getImg(); ?>" alt="img article pull">
                     </a>
                     <h2 class="mrg1">
                         <p><?= $products->getName(); ?></p>
                     </h2>
-                    <p><?= $products->getPrice(); ?>€</p>
+                    <div class="bottomProducts">
+                        <p><?= $products->getPrice(); ?>€</p>
+                        <a class="addPannier" href="/pull/public/addPanier/<?= $products->getId(); ?>">panier</a>
+                    </div>
                 </article>
                 </div>
             </li>

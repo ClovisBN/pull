@@ -1,0 +1,45 @@
+<?php
+    if (isset($_SESSION['panier']) && !empty($_SESSION['panier'])) :
+    ?>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Qte</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($_SESSION['panier'] as $key => $panier) : ?>
+                    <tr>
+                        <td><?= $key ?></td>
+                        <td style="display:flex; align-items:center;">
+                            <form method="post">
+                                <input type="hidden" name="idProduct" value="<?= $key ?>">
+                                <input type="submit" name="decrementProduct" style="background-color:gray; color:#fff; padding:10px 20px;" value="-">
+                            </form>
+                            <?= $panier ?>
+                            <form method="post">
+                                <input type="hidden" name="idProduct" value="<?= $key ?>">
+                                <input type="submit" name="incrementProduct" style="background-color:gray; color:#fff; padding:10px 20px;" value="+">
+                            </form>
+                        </td>
+                        <td>
+                            <form method="post">
+                                <input type="hidden" name="idProduct" value="<?= $key ?>">
+                                <input type="submit" name="deleteProduct" style="background-color:red; color:#fff; padding:10px 20px;" value="Supprimer">
+                            </form>
+                        </td>
+                    </tr>
+
+                <?php endforeach; ?>
+            <tbody>
+        </table>
+    <?php else :  ?>
+        <p>Votre Panier est Vide</p>
+    <?php endif; ?>
+
+    <form method="post">
+        <input type="submit" name="payement" value="Payer">
+    </form>

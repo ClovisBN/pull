@@ -14,4 +14,6 @@ class ProductController extends MainController
         $this->data = $ProductModel->getProductById($this->subPage);   
         $this->render();
     }
+    
+    
 }

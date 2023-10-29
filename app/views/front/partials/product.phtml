@@ -1,7 +1,88 @@
+<?php
+
+use App\Utility\PanierTools;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['addProduct'])) {
+        addMethode();
+    } else if((isset($_POST['deleteProduct']))){
+        deleteMethode();
+    } else if((isset($_POST['decrementProduct']))){
+        decrementMethode();
+    } else if((isset($_POST['incrementProduct']))){
+        incrementMethode();
+    } else if((isset($_POST['payement']))){
+        paiementMethode();
+    }
+}
+
+function addMethode()
+{
+    $idProduct = filter_input(INPUT_POST, 'idProduct');
+    $qteProduct = filter_input(INPUT_POST, 'qteProduct');
+
+    PanierTools::addPanier($idProduct, $qteProduct);
+}
+
+function deleteMethode(){
+    $idProduct = filter_input(INPUT_POST, 'idProduct');
+
+    if(PanierTools::deleteProductFromPanier($idProduct)){
+        echo 'Article effacer du panier';
+    } else {
+        echo 'Probleme lors de la suppression de l\'article';
+    }
+}
+
+function decrementMethode() {
+    $idProduct = filter_input(INPUT_POST, 'idProduct');
+
+    if(PanierTools::decrementProductFromPanier($idProduct)){
+        echo '1 article supprimer du panier';
+    } else {
+        echo 'Probleme lors de la mise à jour de l\'article';
+    }
+}
+
+function incrementMethode() {
+    $idProduct = filter_input(INPUT_POST, 'idProduct');
+
+    if(PanierTools::incrementProductFromPanier($idProduct)){
+        echo '1 article ajouter au panier';
+    } else {
+        echo 'Probleme lors de la mise à jour de l\'article';
+    }
+}
+
+function paiementMethode(){
+    if(PanierTools::deletePanier()){
+        'Paiements Effectués. Merci de votre achat';
+    } else {
+        'Une erreur s\'est produit lors de l\'affichage du panier';
+    }
+}
+
+?>
+
 <main>
-    <article class="postArticle">
-        <div class="titleHeader">
-            <h1><?= $data->getName(); ?></h1>
-        </div>
-    </article>
-    </main>
+    
+    <button onclick="retourPagePrecedente()">Retour à la page précédente</button>
+    
+    <div>
+        <img class="imgProduct" src="<?= $base_uri[0]; ?>/public/assets/front/uploads/<?= $data->getImg(); ?>" alt="img product pull">
+        <div><?= $data->getPrice(); ?> €</div>
+        <form method="post" style="display: flex; flex-direction:column;">
+            <input type="hidden" name="idProduct" value="<?= $data->getId(); ?>">
+            <label>Quantités</label>
+            <input type="number" name="qteProduct" value="<?= $data->getQte(); ?>">
+            <input type="submit" name="addProduct" value="Ajouter au panier">
+        </form>
+    </div>
+      
+
+
+<script>
+    function retourPagePrecedente() {
+        window.history.back();
+    }
+</script>

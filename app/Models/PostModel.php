@@ -33,7 +33,7 @@ class PostModel{
     public static function getPostById($id){
         
         $dbh = DataBase::connectPDO();
-                                                                                                                                                                                                                                                                                            
+
         $query = $dbh->prepare('SELECT * FROM post WHERE id=:id');
         $params = [
             'id'=>$id
@@ -63,7 +63,6 @@ class PostModel{
     public function updatePost(): bool
     {
         $pdo = DataBase::connectPDO();
-        var_dump($this->id);
         $params = [
             'id' => $this->id,
             'title' => $this->title,

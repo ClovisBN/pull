@@ -17,6 +17,12 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^product/(\d+)/?$ index.php?page=product&subpage=$1 [QSA,L]
 
+# Réécrire l'URL pour les pages de addPanier
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^addPanier/(\d+)/?$ index.php?page=addPanier&subpage=$1 [QSA,L]
+
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^admin/([^/]+)/(\d+)/?$ index.php?page=admin&subpage=$1&id=$2 [QSA,L]

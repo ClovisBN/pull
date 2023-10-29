@@ -1,9 +1,9 @@
 <?php 
 
 namespace App\Controllers;
+use App\Models\ProductModel;
 
 use App\Controllers\MainController;
-use App\Models\ProductModel;
 
 class ProductsController extends MainController 
 {

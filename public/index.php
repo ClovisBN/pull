@@ -56,8 +56,12 @@ const AVAIABLE_ROUTES = [
         'controller' => 'UserController'
     ],
     '404'=>[
-        'action' => 'render',
+        'action' => 'renderError',
         'controller' => 'ErrorController'
+    ],
+    'panier'=>[
+        'action' => 'renderPanier',
+        'controller' => 'PanierController'
     ],
 ];
 

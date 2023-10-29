@@ -13,6 +13,7 @@ class ProductModel{
     private $categorie;
     private $price;
     private $img;
+    private $qte;
     
     
     public static function getProduct($limit=null){
@@ -185,6 +186,22 @@ class ProductModel{
     public function setId($id): void
     {
         $this->id = $id;
+    }
+    
+    /**
+     * Get the value of id
+     */
+    public function getQte(): int
+    {
+        return $this->qte;
+    }
+
+    /**
+     * Set the value of id
+     */
+    public function setQte($qte): void
+    {
+        $this->qte = $qte;
     }
 
     /**
